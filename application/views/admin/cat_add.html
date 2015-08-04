@@ -16,22 +16,22 @@
 </h1>
 <!-- start add new category form -->
 <div class="main-div">
-  <form action="index.php?p=admin&c=category&a=insert" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
-	 <table width="100%" id="general-table">
-		<tbody>
-			<tr>
+    <form action="index.php?p=admin&c=category&a=insert" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+        <table width="100%" id="general-table">
+            <tbody>
+            <tr>
 				<td class="label">分类名称:</td>
-				<td><input type="text" name="cat_name" maxlength="20" value="" size="27"> <font color="red">*</font></td>
-			</tr>
-			<tr>
-				<td class="label">上级分类:</td>
+                <td><input type="text" name="cat_name" maxlength="20" value="" size="27"> <font color="red">*</font></td>
+            </tr>
+            <tr>
+                <td class="label">上级分类:</td>
 				<td>
-					<select name="parent_id">
-						<option value="0">顶级分类</option>
+                    <select name="parent_id">
+                        <option value="0">顶级分类</option>
 						<?php foreach($cats as $cat):?>
-						<option value="<?php echo $cat['cat_id'];?>"><?php echo $cat['cat_name'];?></option>
-						<?php endforeach;?>      
-					</select>
+                        <option value="<?php echo $cat['cat_id'];?>"><?php echo $cat['cat_name'];?></option>
+                        <?php endforeach;?>      
+                    </select>
 				</td>
 			</tr>
 

@@ -55,7 +55,7 @@ class CategoryController extends BaseController{
         $cat = $categoryModel->selectByPk($cat_id);
         //获取所有的分类信息
         $cats = $categoryModel->getCats();
-        // var_dump($cat);
+        // var_dump($cats);
         //2.载入编辑表单
         include CUR_VIEW_PATH . "cat_edit.html";
     }

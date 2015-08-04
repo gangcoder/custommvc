@@ -11,6 +11,7 @@ class Framework{
     //让项目启动起来
     public static function run(){
         //echo "running...";die();
+        error_reporting(E_ALL &~E_DEPRECATED);
         self::init();
         self::autoload();
         self::router();
@@ -55,7 +56,7 @@ class Framework{
         //确定类名和方法名
         $controller_name = CONTROLLER . "Controller"; //如GoodsController
         $action_name = ACTION . "Action";  //如addAction
-        var_dump($action_name);die();
+        //var_dump($action_name);die();
         //实例化控制器，然后调用相应的方法
         $controller = new $controller_name;
         $controller->$action_name();

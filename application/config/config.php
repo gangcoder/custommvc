@@ -3,7 +3,7 @@
 return array(
     "host" => "localhost",
     "user" => "root",
-    "password" => "123456",
+    "password" => "123",
     "dbname" => "shop",
     "port" => 3306,
     "charset" => "utf8",

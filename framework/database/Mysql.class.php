@@ -17,7 +17,7 @@ class Mysql{
         $password = isset($config['password'])? $config['password'] : '';
         $dbname = isset($config['dbname'])? $config['dbname'] : '';
         $port = isset($config['port'])? $config['port'] : '3306';
-        $charset = isset($config['charset'])? $config['charset'] : '3306';
+        $charset = isset($config['charset'])? $config['charset'] : 'utf8';
         
         $this->conn = mysql_connect("$host:$port",$user,$password) or die('数据库连接错误');
         mysql_select_db($dbname) or die('数据库选择错误');
@@ -44,7 +44,7 @@ class Mysql{
         //还可以加一个开关来开启/关闭 sql日志
         //以追加的方式来保存
         $temp = "[" . date('Y-m-d H:i:s') ."] " . $sql . PHP_EOL;
-        file_put_contents("log.txt", $temp,FILE_APPEND);
+        file_put_contents(DB_PATH."log.txt", $temp,FILE_APPEND);
 
         $this->sql = $sql;
         $result = mysql_query($this->sql,$this->conn);
